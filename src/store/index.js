@@ -9,6 +9,12 @@ export default new Vuex.Store({
     sum: 0,
     school: "NEU",
     subject: "Vue",
+    personList: [
+      {
+        id: "1",
+        name: "张三",
+      },
+    ],
   },
   getters: {
     //countCom组件中的sum
@@ -22,6 +28,10 @@ export default new Vuex.Store({
     },
     Minus: function (state, value) {
       state.sum -= value;
+    },
+    // 添加人员
+    ADD_PERSON: function (state, value) {
+      state.personList.push(value);
     },
   },
   actions: {

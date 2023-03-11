@@ -3,6 +3,9 @@
     <h1>当前求和为：{{ sum }}</h1>
     <h1>当前求和放大10倍后为：{{ bigsum }}</h1>
     <h1>我在{{ school }}，学习{{ subject }}</h1>
+    <ul>
+      <li v-for="p in personList" :key="p.id">{{ p.name }}</li>
+    </ul>
     <select v-model="number">
       <option :value="1">1</option>
       <option :value="2">2</option>
@@ -49,7 +52,7 @@ export default {
   computed: {
     // 借助mapState生成计算属性，从state中读取数据。（数组写法）
     // 若想要使用数组写法，生成的计算属性名必须和state中的属性名一致
-    ...mapState(["sum", "school", "subject"]),
+    ...mapState(["sum", "school", "subject", "personList"]),
     ...mapGetters(["bigsum"]),
   },
 };

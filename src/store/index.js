@@ -1,56 +1,16 @@
+//该文件用于创建Vuex中最为核心的store
 import Vue from "vue";
+//引入Vuex
 import Vuex from "vuex";
-
+import countOptions from "./moluels/count";
+import personOptions from "./moluels/person";
+//应用Vuex插件
 Vue.use(Vuex);
 
+//创建并暴露store
 export default new Vuex.Store({
-  state: {
-    //countCom组件中的sum
-    sum: 0,
-    school: "NEU",
-    subject: "Vue",
-    personList: [
-      {
-        id: "1",
-        name: "张三",
-      },
-    ],
+  modules: {
+    countAbout: countOptions,
+    personAbout: personOptions,
   },
-  getters: {
-    //countCom组件中的sum
-    bigsum: function (state) {
-      return state.sum * 10;
-    },
-  },
-  mutations: {
-    Add: function (state, value) {
-      state.sum += value;
-    },
-    Minus: function (state, value) {
-      state.sum -= value;
-    },
-    // 添加人员
-    ADD_PERSON: function (state, value) {
-      state.personList.push(value);
-    },
-  },
-  actions: {
-    add: function (context, value) {
-      context.commit("Add", value);
-    },
-    minus: function (context, value) {
-      context.commit("Minus", value);
-    },
-    add1: function (context, value) {
-      if (context.state.sum % 2) {
-        context.commit("Add", value);
-      }
-    },
-    add2: function (context, value) {
-      setTimeout(() => {
-        context.commit("Add", value);
-      }, 1000);
-    },
-  },
-  modules: {},
 });

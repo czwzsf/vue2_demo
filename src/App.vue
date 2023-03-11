@@ -1,19 +1,20 @@
 <template>
-  <div id="app">
-    <count-com></count-com>
-    <person-com></person-com>
+  <div>
+    <Count />
+    <hr />
+    <Person />
   </div>
 </template>
+
 <script>
-import CountCom from "@/components/CountCom.vue";
-import store from "@/store";
-import PersonCom from "@/components/PersonCom.vue";
+import Count from "./components/CountCom.vue";
+import Person from "./components/PersonCom.vue";
 
 export default {
   name: "App",
-  components: { CountCom, PersonCom },
-  // 注入store
-  store,
+  components: { Count, Person },
+  mounted() {
+    // console.log('App',this)
+  },
 };
 </script>
-<style lang="less"></style>

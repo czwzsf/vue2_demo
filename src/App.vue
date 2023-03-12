@@ -1,20 +1,34 @@
 <template>
   <div>
-    <Count />
-    <hr />
-    <Person />
+    <div class="router-link">
+      <el-button type="primary">
+        <router-link to="/home" active-class="active">Home</router-link>
+      </el-button>
+      <el-button type="primary">
+        <router-link to="/about" active-class="active">About</router-link>
+      </el-button>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Count from "./components/CountCom.vue";
-import Person from "./components/PersonCom.vue";
-
 export default {
   name: "App",
-  components: { Count, Person },
   mounted() {
     // console.log('App',this)
   },
 };
 </script>
+<style lang="less">
+.router-link {
+  a {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+  .active {
+    color: white;
+  }
+}
+</style>

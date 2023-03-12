@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>我是about的内容</h2>
+    <h2>Vue Router Demo</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AboutCom",
+  name: "bannerCom",
 };
 </script>
 

@@ -1,17 +1,26 @@
 <template>
   <div>
-    <h1>Home</h1>
-    <p>This is the home page</p>
-    <person-com></person-com>
+    <Banner></Banner>
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        <router-link to="/home/news">News</router-link>
+        <br />
+        <router-link to="/home/message">Message</router-link>
+      </div>
+      <div class="col-xs-6">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import PersonCom from "@/components/PersonCom.vue";
-
+import Banner from "../components/bannerCom.vue";
 export default {
   name: "HomeVIew",
-  components: { PersonCom },
+  components: {
+    Banner,
+  },
 };
 </script>
 

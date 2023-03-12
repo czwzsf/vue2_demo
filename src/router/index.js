@@ -27,8 +27,17 @@ const routes = [
         children: [
           {
             name: "xiangqing",
-            path: "detail/:id/:title",
+            path: "detail/",
             component: () => import("@/views/DetailView.vue"),
+            // 开启props传参 第一种写法
+            // props: true,
+            // 开启props传参 第二种写法
+            props($route) {
+              return {
+                id: $route.query.id,
+                title: $route.query.title,
+              };
+            },
           },
         ],
       },

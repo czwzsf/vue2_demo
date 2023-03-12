@@ -8,7 +8,10 @@
         <router-link to="/home/message">Message</router-link>
       </div>
       <div class="col-xs-6">
-        <router-view></router-view>
+        <!--缓存组件 ,include包含的是组件名-->
+        <keep-alive :include="['NewsView']">
+          <router-view></router-view>
+        </keep-alive>
       </div>
     </div>
   </div>
@@ -16,6 +19,7 @@
 
 <script>
 import Banner from "../components/bannerCom.vue";
+
 export default {
   name: "HomeVIew",
   components: {

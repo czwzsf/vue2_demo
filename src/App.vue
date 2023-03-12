@@ -5,7 +5,7 @@
         <router-link to="/home" active-class="active">Home</router-link>
       </el-button>
       <el-button type="primary">
-        <router-link to="/about" active-class="active">About</router-link>
+        <router-link to="/about" active-class="active">About </router-link>
       </el-button>
     </div>
     <router-view></router-view>

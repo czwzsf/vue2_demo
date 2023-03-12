@@ -26,7 +26,8 @@ const routes = [
         component: () => import("@/views/MessageView.vue"),
         children: [
           {
-            path: "detail",
+            name: "xiangqing",
+            path: "detail/:id/:title",
             component: () => import("@/views/DetailView.vue"),
           },
         ],
